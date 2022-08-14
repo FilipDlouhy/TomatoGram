@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SmallProfile from './SmallProfile'
 import Post from './Post'
 import {useEffect} from 'react'
-
+import RandomFollows from './RandomFollows'
 import {getMetadata ,getDownloadURL,getStorage,uploadBytesResumable, ref, uploadBytes, getBlob,StorageReference, listAll,list} from 'firebase/storage'
 import { async } from '@firebase/util'
 function Home(props) {
@@ -161,7 +161,9 @@ let profilePic;
     
 
     <SmallProfile   folowArr={props.folowArr}  profilePosts={props.profilePosts} setPostLength={props.setPostLength} folowersLength={props.folowersLength} folowLength={props.folowLength}  postsLength={props.postsLength}  postAddedCount= {props.postAddedCount } user={props.user} setUser={props.setUser} userId={props.userId} setUserId={props.setUserId}  setUserProfileImg={props.setUserProfileImg}  userProfileImg={props.userProfileImg} userProfileImgRef={props.userProfileImgRef} showFolow={props.showFolow} showBackground={props.showBackground} showForm={props.showForm}/>
-  
+  <RandomFollows   setPostLength={props.setPostLength}
+ setRandomProfilePosts={props.setRandomProfilePosts} 
+randomSetUser={props.randomSetUser} user={props.user}  folowArr={props.folowArr}/>
 <div>
 { FolowPosts && FolowPosts.map((post,index)=>{
   

@@ -223,8 +223,8 @@ padding-top: 100px;
   height: 225px;
 z-index: 100;
   position: fixed;
-  top: 18%;
-  right:18%;
+  top: 13%;
+  right:10%;
   border-radius: 40px;
   box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
 }
@@ -1428,7 +1428,52 @@ margin: 6px 0;
   font-weight: bolder;
   margin: 6px 0;
     }
+    .RandomFollows{
+      width:500px;
+      height: 505px;
+    z-index: 100;
+      position: fixed;
+      top: 44%;
+      right:10%;
+      border-radius: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
+      padding: 10px;
+    }
+    .RandomFollows h1{
+    margin-bottom: 40px;
+    }
+    .SuggestedFollow{
+      width: 80%;
+      margin: 15px auto;
+      height: 80px;
+      border-radius: 80px ;
+      box-shadow: 8px 8px 8px 8px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+    .SuggestedFollow:hover{
+      width: 90%;
+    }
+    .SuggestedFollow img{
+width: 60px;
+height: 60px;
+border-radius: 100px;
+    }
+    .SuggestedFollow p{
+      font-weight: bolder;
+      font-size: 1.15rem;
+    }      
     @media only screen and (max-width: 1500px) {
+      .RandomFollows{
+        right:15%;
+        position: absolute;
+      }
       .sing-in-img-profile{
         position: absolute;
         left: 5%;
@@ -1440,7 +1485,7 @@ margin: 6px 0;
         top:35%; 
       }
       .posts {
-        padding-top: 400px;
+        padding-top: 900px;
         margin-left: 250px;
     }
     .smallProfile {
@@ -1510,7 +1555,7 @@ top: 35%;
         border: 1px solid blueviolet;
       }
       .posts {
-        padding-top: 400px;
+        padding-top: 900px;
         margin-left: 30px;
     }
     .insta-router img {
@@ -1632,6 +1677,9 @@ top: 35%;
 .insta-logo{
   display: none;
 }
+.post-footer-link {
+  margin-left: 300px;
+}
 header {
 justify-content: space-around;
 }
@@ -1639,6 +1687,7 @@ justify-content: space-around;
   width: 450px;
 }
 .smallProfile {
+  top: 10%;
 right: 14%;
 }
 .chat-person img {

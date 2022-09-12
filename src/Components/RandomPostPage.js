@@ -20,7 +20,13 @@ const [comment,setComment]  = useState()
     const navigate= useNavigate()
     const [likeCount,setLikeCount] = useState()
     const[liked,setLiked] = useState(false)
-    const addComent = (newComent) => setPostComments(prevComents => [...prevComents, newComent])
+    const addComent = (newComent) =>{
+      let arr = []
+      postComments.map((comment)=>arr.push(comment))
+      arr.push(newComent)
+      setPostComments(arr)
+      
+    }
 
 useEffect(()=>{
 
@@ -107,21 +113,30 @@ const getComents =  ()=>{
 
     fetch(`https://insta2-bb83e-default-rtdb.europe-west1.firebasedatabase.app/users/${props.userPostId}/posts/${props.postId}/coments.json`).then((res)=>res.json()).then((data)=>{
   let arr=[]
-Object.values(data).map((comment)=>{
-  let coment ;
-  getDownloadURL(ref(storage,`${comment.userId}/profile.jpg`)).then((url)=>{coment={userName:comment.userName,
- userId:comment.userId,
-profilePhoto:url,
-comment:comment.comment
-}
-arr.push(coment)
-}
-).then(()=>{
-setPostComments(arr)
+  console.log(data)
+  if(data === null){
+    setPostComments([])
+  }else{
+    Object.values(data).map((comment)=>{
+      let coment ;
+      getDownloadURL(ref(storage,`${comment.userId}/profile.jpg`)).then((url)=>{coment={userName:comment.userName,
+     userId:comment.userId,
+    profilePhoto:url,
+    comment:comment.comment
+    }
+    arr.push(coment)
+    }
+    ).then(()=>{
+    
+        setPostComments(arr)
+      
+    
+    
+    })
+    
+    })
+  }
 
-})
-
-})
       })
   }
 

@@ -101,7 +101,7 @@ then((data) => {
   
 Object.values(data).map(id=>allIds.push(id))
 console.log(allIds)
-  ids = shuffle( allIds)
+  ids =  allIds
 
 
 
